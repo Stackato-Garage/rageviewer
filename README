@@ -3,6 +3,13 @@
 A rage comic viewer written in Clojure and ClojureScript. 
 You can find an instance on http://rageviewer.cloudfoundry.com/
 
+## Deploying to Stackato
+
+Stackato supports Clojure through leningen:
+
+    $ lein deps
+    $ stackato push -n
+
 ## Usage
 
 1. Check out code from github
@@ -10,7 +17,7 @@ You can find an instance on http://rageviewer.cloudfoundry.com/
 3. Start a redis server on localhost and listen to default port
 4. lein ring server
 
-## Deployment
+## Deployment to Cloud Foundry
 
 1. Package a war archive: lein ring uberwar
 2. Deploy to CloudFoundry: vmc push YOUR_APP_NAME

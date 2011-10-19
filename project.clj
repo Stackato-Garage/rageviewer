@@ -7,6 +7,7 @@
                  [reddit.clj "0.3.0"]
                  [clj-redis "0.0.12"]]
   :dev-dependencies [[lein-ring "0.4.5"]
-                                   [lein-control "0.1.1"]]
+                     [lein-control "0.1.1"]]
+  :main rageviewer.routes
   :ring {:handler rageviewer.routes/app
          :init  rageviewer.routes/app-init})

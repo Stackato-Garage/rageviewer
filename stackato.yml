@@ -1,0 +1,7 @@
+name: rageviewer
+
+mem: 512M
+
+services:
+  redis: redis-rageviewer
+

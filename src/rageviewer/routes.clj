@@ -1,6 +1,7 @@
 (ns rageviewer.routes
   (:use compojure.core)
-  (:use [rageviewer actions services helper])
+  (:use [rageviewer actions services helper]
+        [ring.adapter.jetty :only [run-jetty]])
   (:require [compojure.route :as route]
             [compojure.handler :as handler]
             [clojure.tools.logging :as logging]))
@@ -29,3 +30,8 @@
 (def app
   (handler/site default-routes))
 
+
+(defn -main []
+  (app-init)
+  (let [port (Integer/parseInt (get (System/getenv) "VCAP_APP_PORT" "8080"))]
+    (run-jetty app {:port port})))
